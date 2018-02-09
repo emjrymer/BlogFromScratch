@@ -1,0 +1,21 @@
+<h1>Create a new blog post</h1>
+
+<h4>Here we need to <strike>put a form</strike><sup>(done)</sup> in order to create a new blog post</h4>
+
+<p>* <strike>Need to create a model to represent the blog post object being saved to the db.</strike></p>
+<p>* <strike>Need to create "create" action in PostsController that will save blog post to db.</strike></p>
+
+<%= form_with scope: :post, url: posts_path do |form| %>
+  <p>inside the form</p>
+  <p>
+    <%= form.label :title %> <br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :body %> <br>
+    <%= form.text_area :body %>
+  </p>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "back", root_path %>

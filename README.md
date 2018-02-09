@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## notes
+* clone project
+* run `bundle install`
+* migrate db with `rails db:migrate`
+
+
+## todo
+* ~~create home view~~
+* ~~create blog post~~
+* add an author to individual blog post

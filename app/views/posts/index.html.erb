@@ -1,0 +1,7 @@
+<h1>all blog posts</h1>
+<% @posts.each do |post| %>
+<h3><%= post.id %>: <%= post.title %></h3>
+<p><%= post.body %></p>
+<% end %>
+
+<%= link_to "home", root_path %>
