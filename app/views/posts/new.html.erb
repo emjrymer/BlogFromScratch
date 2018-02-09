@@ -5,8 +5,21 @@
 <p>* <strike>Need to create a model to represent the blog post object being saved to the db.</strike></p>
 <p>* <strike>Need to create "create" action in PostsController that will save blog post to db.</strike></p>
 
-<%= form_with scope: :post, url: posts_path do |form| %>
+<%= form_with scope: :post, url: posts_path, local: true do |form| %>
   <p>inside the form</p>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %>
+        prohibited this blog post from being saved:
+      </h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= form.label :title %> <br>
     <%= form.text_field :title %>
@@ -18,4 +31,4 @@
   <%= form.submit %>
 <% end %>
 
-<%= link_to "back", root_path %>
+<%= link_to 'back', root_path %>

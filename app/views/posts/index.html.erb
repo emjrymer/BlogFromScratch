@@ -2,6 +2,7 @@
 <% @posts.each do |post| %>
 <h3><%= post.id %>: <%= post.title %></h3>
 <p><%= post.body %></p>
+<p><%= link_to 'show', post_path(post) %></p>
 <% end %>
 
-<%= link_to "home", root_path %>
+<%= link_to 'home', root_path %>
